@@ -1,0 +1,12 @@
+name: payment CI pipeline main
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+run-name: ${{ github.sha }}-${{ github.event.head_commit.message }}
+jobs:
+  workflow_call_with_inputs:
+    uses: dsaniset23/roboshop-actions/.github/workflows/ci-main.yml@main
+    with:
+      componentName: shipping
