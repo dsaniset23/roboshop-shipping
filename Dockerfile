@@ -1,5 +1,5 @@
 FROM        redhat/ubi9
-RUN         dnf install java-17-openjdk java-17-openjdk-devel maven -y
+RUN         dnf install java-17-openjdk java-17-openjdk-devel maven -y && dnf clean all
 WORKDIR     /app
 RUN         useradd -d /app roboshop && chown roboshop:roboshop /app
 USER        roboshop
